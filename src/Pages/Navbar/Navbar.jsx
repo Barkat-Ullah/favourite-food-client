@@ -32,32 +32,32 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/services"
+          to="/addProduct"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#C5A35E]" : ""
           }
         >
-          services
+          Add Product
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/myCart"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#C5A35E] " : ""
+          }
+        >
+         My Cart
         </NavLink>
       </li>
       <li>
         <NavLink
           to="/blog"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#C5A35E] " : ""
-          }
-        >
-          Blog
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/contact"
-          className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#C5A35E]  " : ""
           }
         >
-          Contact
+          Blog
         </NavLink>
       </li>
     </>
