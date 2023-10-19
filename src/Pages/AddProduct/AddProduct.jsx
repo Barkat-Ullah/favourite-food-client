@@ -1,9 +1,11 @@
+
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const AddProduct = () => {
 
-    const handleAddCoffee = event => {
+    const handleAddFood = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -16,15 +18,15 @@ const AddProduct = () => {
         const details = form.details.value;
         const photo = form.photo.value;
 
-        const newCoffee = {name, quantity, supplier, taste, category, details, photo}
-        console.log(newCoffee);
+        const newFood = {name, quantity, supplier, taste, category, details, photo}
+        console.log(newFood);
 
-        fetch('http://localhost:5000/coffee', {
+        fetch('http://localhost:5000/foods', {
             method:'POST',
             headers:{
                 'content-type' : 'application/json'
             },
-            body:JSON.stringify(newCoffee)
+            body:JSON.stringify(newFood)
         })
         .then(res => res.json())
         .then(data => {
@@ -32,7 +34,7 @@ const AddProduct = () => {
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'User successfully added',
+                    text: 'Item successfully added',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
@@ -42,13 +44,36 @@ const AddProduct = () => {
 
     return (
         <div>
+            <div className="bg-[#F4F3F0] pt-2 pl-2">
+                
+            <Link to= "/">
+            <button className="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5 rtl:rotate-180"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+                  />
+                </svg>
+
+                <span className="text-blue-500">Go back</span>
+              </button>
+            </Link>
+            </div>
             
         <div className="form-control">
             <div className="bg-[#F4F3F0] p-24">
-                <h2 className="text-3xl text-center text-slate-800 font-extrabold">Add a Yummy food or <span className="text-[#C5A35E]">Cold Drinks</span></h2>
+                <h2 className="text-3xl text-center text-slate-600 font-extrabold">Add a Yummy food or <span className="text-[#C5A35E]">Cold Drinks</span></h2>
                 <p className="text-center text-slate-700 mt-4">Indulge in the rich, savory flavors of our garlic butter shrimp pasta. Plump shrimp, al dente pasta, coca-cola, pepsi and a velvety garlic butter sauce create a culinary masterpiece thats simply irresistible.</p>
 
-                <form onSubmit={handleAddCoffee}>
+                <form onSubmit={handleAddFood}>
                    
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
@@ -117,7 +142,7 @@ const AddProduct = () => {
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Add Coffee" className="btn btn-warning w-full text-slate-500" />
+                    <input type="submit" value="Add Your Favorite Food" className="btn btn-warning w-full text-slate-500" />
                 </form>
             </div>
         </div>

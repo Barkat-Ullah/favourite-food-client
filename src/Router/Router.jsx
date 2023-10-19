@@ -7,6 +7,8 @@ import Register from "../Pages/Register/Register";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import Blog from "../Pages/Blog/Blog";
+import FoodAll from "../Pages/FoodAll/FoodAll";
+import Update from "../Pages/Update/Update";
 
 
 const router = createBrowserRouter([
@@ -18,7 +20,18 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/',
-                element:<Home></Home>
+                element:<Home></Home>,
+             
+            },
+            {
+                path:'/food/:id',
+                element:<FoodAll></FoodAll>,
+                loader:() => fetch('http://localhost:5000/foods')
+            },
+            {
+                path:'/foods/:id',
+                element:<Update></Update>,
+                loader:({params}) => fetch(`http://localhost:5000/foods/${params.id}`)
             },
             {
                 path: '/login',
@@ -34,7 +47,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myCart',
-                element:<MyCart></MyCart>
+                element:<MyCart></MyCart>,
+                loader:() => fetch('http://localhost:5000/foods')
             },
             {
                 path:'/blog',

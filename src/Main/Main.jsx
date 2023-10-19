@@ -6,7 +6,7 @@ import Footer from "../Pages/Footer/Footer";
 const Main = () => {
   return (
     <div>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto font-dmSans">
         <Navbar></Navbar>
         <Outlet></Outlet>
       </div>
