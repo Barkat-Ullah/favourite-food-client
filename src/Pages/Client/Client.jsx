@@ -10,9 +10,9 @@ const Client = () => {
               </h1>
 
               <div className="flex mx-auto mt-6">
-                <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-                <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-                <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+                <span className="inline-block w-40 h-1 bg-[#C5A35E] rounded-full"></span>
+                <span className="inline-block w-3 h-1 mx-1 bg-[#C5A35E] rounded-full"></span>
+                <span className="inline-block w-1 h-1 bg-[#c0ab82] rounded-full"></span>
               </div>
             </div>
 

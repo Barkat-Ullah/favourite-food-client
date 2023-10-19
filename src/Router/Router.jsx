@@ -10,6 +10,7 @@ import Blog from "../Pages/Blog/Blog";
 import FoodAll from "../Pages/FoodAll/FoodAll";
 import Update from "../Pages/Update/Update";
 import Details from "../Pages/Details/Details";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -31,12 +32,12 @@ const router = createBrowserRouter([
             },
             {
                 path:'/foods/:id',
-                element:<Update></Update>,
+                element:<PrivateRoute><Update></Update></PrivateRoute>,
                 loader:({params}) => fetch(`http://localhost:5000/foods/${params.id}`)
             },
             {
                 path: '/details/:id', 
-                element: <Details></Details>,
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
             },
             {
@@ -49,11 +50,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addProduct',
-                element:<AddProduct></AddProduct>
+                element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path:'/myCart',
-                element:<MyCart></MyCart>,
+                element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
                 loader:() => fetch('http://localhost:5000/foods')
             },
             {
