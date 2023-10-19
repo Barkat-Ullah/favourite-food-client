@@ -30,7 +30,8 @@ const AllFood = ({ allFood }) => {
           </h2>
           <p>Rating : {details}</p>
         </div>
-        <div className="flex w-full p-6 pt-0">
+      <div className="flex justify-between items-center">
+      <div className="flex w-full p-6 pt-0">
         <Link to={`/foods/${_id}`}>          
             <button className="btn btn-outline btn-warning w-full">
               Update
@@ -39,10 +40,13 @@ const AllFood = ({ allFood }) => {
 
         </div>
         <div className="flex justify-end p-6 pt-0">
-          <button className="inline-flex items-center justify-center w-full h-10 gap-2 px-5 text-sm font-medium tracking-wide text-slate-100 duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#f5bd4f] hover:bg-[#a1741a] focus:bg-[#826c41] disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+        <Link to={`/details/${_id}`}>
+        <button className="inline-flex items-center justify-center w-full h-12 gap-2 px-5 text-sm font-medium tracking-wide text-slate-100 duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#f5bd4f] hover:bg-[#a1741a] focus:bg-[#826c41] disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
             <span>Details</span>
           </button>
+        </Link>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,9 +1,14 @@
+import Client from "../Client/Client";
+import Worker from "../FoodWorker/Worker";
+import Gallery from "../Gallery/Gallery";
 
 
 const Blog = () => {
     return (
         <div>
-            <h2>this is blog</h2>
+            <Gallery></Gallery>
+            <Worker></Worker>
+            <Client></Client>
         </div>
     );
 };
