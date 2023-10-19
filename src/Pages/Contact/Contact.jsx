@@ -1,4 +1,5 @@
 const Contact = () => {
+  
   return (
     <div className="bg-[#F4F3F0]">
 

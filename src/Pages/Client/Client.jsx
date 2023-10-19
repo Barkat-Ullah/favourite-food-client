@@ -1,6 +1,6 @@
 const Client = () => {
   return (
-    <div className="bg-[#F4F3F0]">
+    <div className="bg-[#cec9ba]">
       <section className=" dark:bg-gray-900">
         <div className="container px-6 py-10 mx-auto">
           <div className="mt-6 md:flex md:items-center md:justify-between">
@@ -36,7 +36,7 @@ const Client = () => {
                   />
                 </svg>
               </button>
-
+ 
               <button
                 title="right arrow"
                 className="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:text-gray-200 dark:hover:bg-gray-800 dark:border-gray-700 hover:bg-gray-100"

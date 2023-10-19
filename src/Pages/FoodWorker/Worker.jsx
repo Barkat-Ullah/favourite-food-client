@@ -1,7 +1,7 @@
 const Worker = () => {
   return (
     <div>
-      <section className="bg-[#F4F3F0] dark:bg-gray-900">
+      <section className="bg-[#cec9ba] dark:bg-gray-900">
         <div className="container px-6 py-8 mx-auto">
           <h2 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
             Our Team Members
