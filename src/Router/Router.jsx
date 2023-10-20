@@ -28,17 +28,17 @@ const router = createBrowserRouter([
             {
                 path:'/food/:id',
                 element:<FoodAll></FoodAll>,
-                loader:() => fetch('http://localhost:5000/foods')
+                loader:() => fetch('https://food-auth-server-hyvgtpljs-barkat-ullah.vercel.app/foods')
             },
             {
                 path:'/foods/:id',
                 element:<PrivateRoute><Update></Update></PrivateRoute>,
-                loader:({params}) => fetch(`http://localhost:5000/foods/${params.id}`)
+                loader:({params}) => fetch(`https://food-auth-server-hyvgtpljs-barkat-ullah.vercel.app/foods/${params.id}`)
             },
             {
                 path: '/details/:id', 
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-auth-server-hyvgtpljs-barkat-ullah.vercel.app/foods/${params.id}`)
             },
             {
                 path: '/login',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path:'/myCart',
                 element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader:() => fetch('http://localhost:5000/foods')
+                loader:() => fetch('https://food-auth-server-hyvgtpljs-barkat-ullah.vercel.app/foods')
             },
             {
                 path:'/blog',

@@ -2,8 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
 
   const [loggedIn, setLoggedIn] = useState("");
 
@@ -63,12 +65,14 @@ const Navbar = () => {
     </>
   );
 
+
+
   return (
     <div>
       <div className="navbar bg-slate-900">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-warning lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -91,12 +95,13 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <div className="">
+          <div className="flex justify-center items-center gap-3">
             <img
               className="w-40 h-14"
               src="https://i.ibb.co/z7s0k8B/logo.png"
               alt=""
             />
+          <input type="checkbox" className="toggle toggle-warning" />
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">
