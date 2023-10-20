@@ -5,8 +5,8 @@ const Footer = () => {
         <aside>
          <img className="w-28 h-14" src="https://i.ibb.co/z7s0k8B/logo.png" alt="" />
           <p className="font-bold">
-            ACME Industries Ltd. <br />
-            Providing reliable tech since 1992
+            dhanksik restuarent  <br />
+            Providing reliable serve since 2020.
           </p>
           <p>Copyright © 2023 - All right reserved</p>
         </aside>

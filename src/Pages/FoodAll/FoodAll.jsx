@@ -3,8 +3,6 @@ import AllFood from "../AllFood/AllFood";
 
 const FoodAll = () => {
   const allFoods = useLoaderData();
-  console.log(allFoods);
-
 
 
   return (
