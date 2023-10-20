@@ -20,21 +20,21 @@ const Gallery = () => {
           </div>
           <div className="flex flex-wrap md:-m-2 -m-1">
             <div className="flex flex-wrap w-1/2">
-              <div className="md:p-2 p-1 w-1/2">
+              <div data-aos="zoom-in-up" className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-[250px] object-center block"
                   src="https://i.ibb.co/TKYB4X8/pexels-deeana-arts-2894651.jpg"
                 />
               </div>
-              <div className="md:p-2 p-1 w-1/2">
+              <div data-aos="zoom-in-up" className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-[250px] object-center block"
                   src="https://i.ibb.co/BB0jdj4/pexels-lisa-fotios-11802698.jpg"
                 />
               </div>
-              <div className="md:p-2 p-1 w-full">
+              <div data-aos="zoom-in-up" className="md:p-2 p-1 w-full">
                 <img
                   alt="gallery"
                   className="w-full h-[400px] object-cover object-center block"
@@ -43,21 +43,21 @@ const Gallery = () => {
               </div>
             </div>
             <div className="flex flex-wrap w-1/2">
-              <div className="md:p-2 p-1 w-full">
+              <div data-aos="zoom-in-up" className="md:p-2 p-1 w-full">
                 <img
                   alt="gallery"
                   className="w-full h-[400px] object-cover object-center block"
                   src="https://i.ibb.co/5Y7pQnW/pexels-nati-17216084.jpg"
                 />
               </div>
-              <div className="md:p-2 p-1 w-1/2">
+              <div data-aos="zoom-in-up" className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-[250px] object-center block"
                   src="https://i.ibb.co/nRwvcPP/pexels-eiliv-aceron-6895776.jpg"
                 />
               </div>
-              <div className="md:p-2 p-1 w-1/2">
+              <div data-aos="zoom-in-up" className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-[250px] object-center block"

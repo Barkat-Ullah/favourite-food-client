@@ -1,7 +1,13 @@
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <div>
       <div
@@ -14,13 +20,13 @@ const Banner = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="hero min-h-screen">
             <div className="hero-content justify-between flex-col lg:flex-row-reverse">
-             <div className="">
+             <div data-aos="fade-left" className="">
              <img
                 src="https://i.ibb.co/Wkdb3dF/Screenshot-50-removebg-preview.png"
                 className="max-w-sm rounded-lg shadow-2xl"
               />
              </div>
-              <div className="">
+              <div data-aos="fade-right" className="">
               <h1 className="text-4xl font-bold text-slate-400">Good Food Make <span className="text-[#C5A35E]">A GOOD MIND</span></h1>
               <p className="py-6 text-slate-300">
                   Discover the world of exquisite flavors that tantalize your taste buds and elevate your mood. Our passion is creating unforgettable culinary experiences, and we invite you to embark on this delicious journey with us. From farm-fresh ingredients to masterful craftsmanship, every dish tells a story. Join us today and let good food make a good mood and a good mind.
