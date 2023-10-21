@@ -1,9 +1,12 @@
 
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Context/AuthProvider";
 
 
 const AddProduct = () => {
+    const {user} = useContext(AuthContext)
 
     const handleAddFood = event => {
         event.preventDefault();
@@ -17,11 +20,11 @@ const AddProduct = () => {
         const category = form.category.value;
         const details = form.details.value;
         const photo = form.photo.value;
-
-        const newFood = {name, quantity, supplier, taste, category, details, photo}
+       
+        const newFood = {user : user?.email ,name, quantity, supplier, taste, category, details, photo}
         console.log(newFood);
 
-        fetch('http://localhost:5000/client', {
+        fetch('https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/client', {
             method:'POST',
             headers:{
                 'content-type' : 'application/json'

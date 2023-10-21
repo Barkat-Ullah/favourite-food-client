@@ -31,7 +31,7 @@ const Update = () => {
     const upFood = {name, quantity, supplier, taste, category, details, photo}
     console.log(upFood);
 
-    fetch(`http://localhost:5000/${productFood}/${productFood2}`, {
+    fetch(`https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/${productFood}/${productFood2}`, {
         method:'PUT',
         headers:{
             'content-type' : 'application/json'

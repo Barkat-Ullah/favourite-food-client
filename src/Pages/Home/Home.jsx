@@ -2,25 +2,28 @@
 import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import FoodCard from "../FoodCard/FoodCard";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Gallery from "../Gallery/Gallery";
 import Worker from "../FoodWorker/Worker";
 import Client from "../Client/Client";
+import { useLoaderData } from "react-router-dom";
 
 
 const Home = () => {
 
-    // const foods = useLoaderData();
-    const [foodData, setFoodData] = useState([]);
+    const foodData = useLoaderData();
+    console.log(foodData);
+
+    // const [foodData, setFoodData] = useState([]);
      
-    useEffect(() => {
-        fetch('/company.json')
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            setFoodData(data)
-        })
-    } ,[])
+    // useEffect(() => {
+    //     fetch('/company.json')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         setFoodData(data)
+    //     })
+    // } ,[])
 
     return (
         <div>

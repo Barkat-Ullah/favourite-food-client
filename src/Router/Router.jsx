@@ -23,24 +23,24 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element:<Home></Home>,
-             
+                loader: () => fetch('https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/foods')
             },
             {
                 path:'/food/:supplier_brand',
                 element:<FoodAll></FoodAll>,
-                loader:({params}) => fetch(`http://localhost:5000/${params.supplier_brand}`)
+                loader:({params}) => fetch(`https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/${params.supplier_brand}`)
             },
 
             {
                 path:'/update/:supplier_brand/:id',
                 element:<PrivateRoute><Update></Update></PrivateRoute>,
-                loader:({params}) => fetch(`http://localhost:5000/${params.supplier_brand}/${params.id}`)
+                loader:({params}) => fetch(`https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/${params.supplier_brand}/${params.id}`)
             },
 
             {
                 path: '/details/:supplier_brand/:id', 
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/${params.supplier_brand}/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/${params.supplier_brand}/${params.id}`)
             },
 
             {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             {
                 path:'/myCart',
                 element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader:() => fetch('http://localhost:5000/client')
+                loader:() => fetch('https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/client')
             },
             {
                 path:'/blog',

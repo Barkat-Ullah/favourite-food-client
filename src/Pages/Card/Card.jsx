@@ -22,7 +22,7 @@ const Card = ({card, removes, setRemoves}) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/foods/${id}`, {
+                fetch(`https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/client/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -58,7 +58,7 @@ const Card = ({card, removes, setRemoves}) => {
     //         if (result.isConfirmed) {
     //             console.log(`Deleting product with ID: ${_id}`);
                 
-    //             fetch(`http://localhost:5000/foods/${_id}`, {
+    //             fetch(`https://food-auth-server-ffp980d4i-barkat-ullah.vercel.app/foods/${_id}`, {
     //                 method: 'DELETE'
     //             })
     //                 .then(res => {

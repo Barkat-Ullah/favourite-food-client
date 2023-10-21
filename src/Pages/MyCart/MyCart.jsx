@@ -1,12 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "../Card/Card";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 
 const MyCart = () => {
     const myCards = useLoaderData()
-    const [removes, setRemoves] = useState(myCards)
-    console.log(myCards);
+    const {user} = useContext(AuthContext)
+
+    const userCards = myCards.filter(card => card.user == user.email)
+    const [removes, setRemoves] = useState(userCards)
+    console.log(userCards);
     return (
         <div className="my-32">
        

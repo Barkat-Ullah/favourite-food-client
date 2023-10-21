@@ -7,8 +7,8 @@ console.log(allFoods);
 
   return (
     <div>
-      <div>
-        <div className="carousel w-full h-[400px]">
+      <div className="">
+        <div className="carousel pt-10 w-full h-[400px]">
           <div id="slide1" className="carousel-item relative w-full">
             <img
               src="https://i.ibb.co/wJVhvnL/Chamagadda-Mutton-Pulusu.webp"
@@ -55,7 +55,7 @@ console.log(allFoods);
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-5">
         {
             allFoods?.map(allFood => <AllFood key={allFood?._id} allFood={allFood}></AllFood>)
         }
