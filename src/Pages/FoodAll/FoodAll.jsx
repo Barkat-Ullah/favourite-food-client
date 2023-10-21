@@ -3,7 +3,7 @@ import AllFood from "../AllFood/AllFood";
 
 const FoodAll = () => {
   const allFoods = useLoaderData();
-console.log(allFoods);
+  console.log(allFoods);
 
   return (
     <div>
@@ -51,14 +51,22 @@ console.log(allFoods);
               </a>
             </div>
           </div>
-  
         </div>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-5">
-        {
-            allFoods?.map(allFood => <AllFood key={allFood?._id} allFood={allFood}></AllFood>)
-        }
+        {allFoods?.length > 0 ? (
+          allFoods.map((allFood) => (
+            <AllFood key={allFood?._id} allFood={allFood}></AllFood>
+          ))
+        ) : (
+          <div className="text-center flex items-center justify-center">
+            <img className="w-full "
+              src="https://i.ibb.co/58mKL2R/240-F-475012363-a-Nq-Xx8-Crso-Tf-JP5-KCf1r-ERd6-G50-K0h-Xw.jpg"
+              alt=""
+            />
+         
+          </div>
+        )}
       </div>
     </div>
   );
