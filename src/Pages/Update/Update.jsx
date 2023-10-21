@@ -1,12 +1,19 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
   const updatedFood = useLoaderData();
-  const { _id, name, quantity, supplier, taste, category, details, photo } =
-    updatedFood;
+  const location = useLocation()
+
+  const productFood = location.pathname.split('/')[2]
+  const productFood2 = location.pathname.split('/')[3]
+  console.log(productFood, productFood2);
+
 
   console.log(updatedFood);
+  const { name, quantity, supplier, taste, category, details, photo } =
+    updatedFood;
+
 
   const handleAddFood = event => {
     event.preventDefault();
@@ -24,7 +31,7 @@ const Update = () => {
     const upFood = {name, quantity, supplier, taste, category, details, photo}
     console.log(upFood);
 
-    fetch(`https://food-auth-server-hyvgtpljs-barkat-ullah.vercel.app/foods/${_id}`, {
+    fetch(`http://localhost:5000/${productFood}/${productFood2}`, {
         method:'PUT',
         headers:{
             'content-type' : 'application/json'
@@ -48,7 +55,7 @@ const Update = () => {
   return (
     <div>
       <div className="bg-[#F4F3F0] pt-2 pl-2">
-        <Link to={`/food/${_id}`}>
+        <Link to={`/food/`}>
           <button className="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"

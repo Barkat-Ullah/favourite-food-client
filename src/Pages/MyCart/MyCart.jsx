@@ -8,7 +8,7 @@ const MyCart = () => {
     const [removes, setRemoves] = useState(myCards)
     console.log(myCards);
     return (
-        <div className="my-10">
+        <div className="my-32">
        
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {

@@ -1,7 +1,7 @@
 const Contact = () => {
   
   return (
-    <div className="bg-[#F4F3F0]">
+    <div className="">
 
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-24 mx-auto">

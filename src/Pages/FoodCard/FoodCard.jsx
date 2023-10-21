@@ -7,7 +7,7 @@ const FoodCard = ({ food }) => {
   return (
     <div className="mb-5 ">
 
-      <Link to={`/food/${id}`}>
+      <Link to={`/food/${supplier_brand}`}>
         <div
           className="hero h-60 rounded-lg"
           style={{ backgroundImage: `url(${image})` }}

@@ -21,7 +21,7 @@ const AddProduct = () => {
         const newFood = {name, quantity, supplier, taste, category, details, photo}
         console.log(newFood);
 
-        fetch('https://food-auth-server-hyvgtpljs-barkat-ullah.vercel.app/foods', {
+        fetch('http://localhost:5000/client', {
             method:'POST',
             headers:{
                 'content-type' : 'application/json'

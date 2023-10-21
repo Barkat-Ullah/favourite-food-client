@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -23,6 +23,14 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
 
+  const [theme, setTheme] = React.useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+  
+  React.useEffect(() => {
+    document.querySelector('html').setAttribute('data-theme', theme);
+  }, [theme]);
 
   const createUser = (email, password) => {
     setLoader(true);
@@ -56,6 +64,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const authInfo = {
+    toggleTheme,
     user,
     loader,
     createUser,

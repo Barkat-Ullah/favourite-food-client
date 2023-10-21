@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const {toggleTheme} =useContext(AuthContext)
 
   const [loggedIn, setLoggedIn] = useState("");
 
@@ -68,8 +68,8 @@ const Navbar = () => {
 
 
   return (
-    <div>
-      <div className="navbar bg-slate-900">
+    <div className="relative">
+      <div className="navbar bg-slate-900 absolute">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-warning lg:hidden">
@@ -101,7 +101,9 @@ const Navbar = () => {
               src="https://i.ibb.co/z7s0k8B/logo.png"
               alt=""
             />
-          <input type="checkbox" className="toggle toggle-warning" />
+
+          <input onClick={toggleTheme}  type="checkbox" className="toggle toggle-warning" />
+
           </div>
         </div>
         <div className="navbar-end hidden lg:flex">

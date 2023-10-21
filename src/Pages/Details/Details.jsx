@@ -1,15 +1,45 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const detailsPage = useLoaderData();
   const { _id, name, quantity, supplier, taste, category, details, photo } =
     detailsPage;
 
+  const newId = { name, quantity, supplier, taste, category, details, photo }
+
+    const navigate = useNavigate()
+
+    const handleAdd = () => {
+
+      fetch('http://localhost:5000/client', {
+        method:'POST',
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body:JSON.stringify(newId)
+    })
+    .then(res => res.json())
+    .then(data => {
+        
+        if(data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Item successfully added',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+    })
+    }
+  
+
   return (
  
-    <div className="hero min-h-screen bg-[#F4F3F0]">
+ <div className="">
+     <div className="hero  bg-[#F4F3F0]">
       <div className="hero-content flex-col lg:flex-row">
-        <img src={photo} className="max-w-sm rounded-lg " />
+        <img src={photo} className="w-96 h-56 rounded-lg " />
         <div className="flex flex-col space-y-3">
           <h1 className="text-5xl font-bold">{name}</h1>
           <p className="py-6">{category}</p>
@@ -44,29 +74,16 @@ const Details = () => {
             />
           </div>
 
-          <Link to={`/food/${_id}`}>
-          <button className="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-5 h-5 rtl:rotate-180"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
-              />
-            </svg>
+          <div className="flex justify-center items-center space-x-2">
+          <button onClick={handleAdd} className="btn btn-warning">Add to Cart</button>
+          <button  onClick={() => navigate(-1)} className="btn btn-outline btn-warning">Go Back</button>
 
-            <span className="text-blue-500">Go back</span>
-          </button>
-        </Link>
+          </div>
+       
         </div>
       </div>
     </div>
+ </div>
   );
 };
 

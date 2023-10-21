@@ -1,42 +1,42 @@
 [
     {
       "id": "1",
-      "supplier_brand": "Madhangsik",
+      "supplier_brand": "madhangsik",
       "type": "Pizza",
       "image": "https://i.ibb.co/fvxMqVg/card-1-removebg-preview-1.png"
      
     },
     {
       "id": "2",
-      "supplier_brand": "Dhangsik",
+      "supplier_brand": "dhangsik",
       "type": "Sushi",
       "image": "https://i.ibb.co/qj9ZkTC/card-2-removebg-preview-1.png"
      
     },
     {
       "id": "3",
-      "supplier_brand": "Red One",
+      "supplier_brand": "redone",
       "type": "Burger",
       "image": "https://i.ibb.co/y4Y3TdY/card-3-removebg-preview.png"
 
     },
     {
       "id": "4",
-      "supplier_brand": "PepsiCo",
+      "supplier_brand": "pepsico",
       "type": "Salad",
       "image": "https://i.ibb.co/hHrfvRT/Pepsi-1-removebg-preview-1.png"
      
     },
     {
       "id": "5",
-      "supplier_brand": "Mustafa",
+      "supplier_brand": "mustafa",
       "type": "Beverage",
       "image": "https://i.ibb.co/5hwrCCH/card-4-removebg-preview-1.png"
    
     },
     {
       "id": "6",
-      "supplier_brand": "Coca-Cola",
+      "supplier_brand": "cocacola",
       "type": "Pasta",
       "image": "https://i.ibb.co/WcnSwH5/coca-1-removebg-preview.png"
 
